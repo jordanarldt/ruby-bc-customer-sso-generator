@@ -20,7 +20,7 @@ payload = {
   channel_id: channelId
 }
 
-token = JWT.encode payload, clientSecret, "HS256"
+token = JWT.encode(payload, clientSecret, "HS256", { typ: "JWT" })
 loginUrl = "#{storeUrl}/login/token/#{token}"
 
 puts loginUrl
